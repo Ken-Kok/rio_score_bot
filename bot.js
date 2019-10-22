@@ -32,7 +32,9 @@ client.on('message', msg => {
                         let dpsScore = json.mythic_plus_scores_by_season[0].scores.dps;
                         let tankScore = json.mythic_plus_scores_by_season[0].scores.tank;
 
-                        msg.reply('Scores for ' + name + ': \n Tank: ' + tankScore + '\n DPS: ' + dpsScore + '\n Heal: ' + healScore);
+                        const replyString = 'Scores for ' + name + ': \n Tank: ' + tankScore + '\n DPS: ' + dpsScore + '\n Heal: ' + healScore;
+                        msg.reply(replyString);
+                        console.log('Replied with: ' + replyString);
                     } else {
                         msg.reply('There was an error with the raider.io request, please try again.');
                     }
