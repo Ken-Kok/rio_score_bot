@@ -7,17 +7,12 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'ping') {
-        msg.reply('pong');
-        console.log('Replied to message');
-    }
-
     if (msg.mentions.users.has('636190003306692608')) {
         console.log('Message to bot received.');
         let parsable = msg.content.slice(22).split('/');
         if (parsable.length !== 2) {
             msg.reply('Failed to parse message. Please try again using the format {Character}/{Realm}.' +
-                'Please note that this bot only works for US characters.');
+                ' Please note that this bot only works for US characters.');
         } else {
             let name = parsable[0];
             let realm = parsable[1];
